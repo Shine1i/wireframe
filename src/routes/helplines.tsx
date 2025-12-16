@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Globe, Info, MessageSquare, MapPin } from "lucide-react";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -28,14 +27,14 @@ const helplines = [
 
 function HelplinesPage() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-background">
             {/* Header */}
-            <div className="bg-gray-50 border-b border-gray-200">
+            <div className="bg-gradient-to-r from-teal/20 via-teal/10 to-blue/20 border-b border-teal/30">
                 <div className="mx-auto max-w-4xl px-6 py-10">
-                    <h1 className="text-3xl font-semibold text-gray-900 text-center sm:text-4xl">
+                    <h1 className="text-3xl font-semibold text-foreground text-center sm:text-4xl">
                         Helplines
                     </h1>
-                    <p className="mt-4 text-gray-600 text-center max-w-2xl mx-auto">
+                    <p className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto">
                         Here you will find phone numbers and resources in your country. Call them if people from your contacts list are not available, or if you feel emotionally alone. A stranger who wants to help is just a call away.
                     </p>
                 </div>
@@ -44,44 +43,44 @@ function HelplinesPage() {
             {/* Tabs */}
             <div className="mx-auto max-w-4xl px-6 py-8">
                 <Tabs defaultValue="call" className="w-full">
-                    <TabsList className="grid w-full grid-cols-5 mb-8">
-                        <TabsTrigger value="call" className="flex items-center gap-2">
+                    <TabsList className="grid w-full grid-cols-5 mb-8 bg-teal/10">
+                        <TabsTrigger value="call" className="flex items-center gap-2 data-[state=active]:bg-teal-dark data-[state=active]:text-white">
                             <Phone className="w-4 h-4" />
                             <span className="hidden sm:inline">Call</span>
                         </TabsTrigger>
-                        <TabsTrigger value="website" className="flex items-center gap-2">
+                        <TabsTrigger value="website" className="flex items-center gap-2 data-[state=active]:bg-teal-dark data-[state=active]:text-white">
                             <Globe className="w-4 h-4" />
                             <span className="hidden sm:inline">Website</span>
                         </TabsTrigger>
-                        <TabsTrigger value="info" className="flex items-center gap-2">
+                        <TabsTrigger value="info" className="flex items-center gap-2 data-[state=active]:bg-teal-dark data-[state=active]:text-white">
                             <Info className="w-4 h-4" />
                             <span className="hidden sm:inline">Info</span>
                         </TabsTrigger>
-                        <TabsTrigger value="chat" className="flex items-center gap-2">
+                        <TabsTrigger value="chat" className="flex items-center gap-2 data-[state=active]:bg-teal-dark data-[state=active]:text-white">
                             <MessageSquare className="w-4 h-4" />
                             <span className="hidden sm:inline">Chat</span>
                         </TabsTrigger>
-                        <TabsTrigger value="find" className="flex items-center gap-2">
+                        <TabsTrigger value="find" className="flex items-center gap-2 data-[state=active]:bg-teal-dark data-[state=active]:text-white">
                             <MapPin className="w-4 h-4" />
                             <span className="hidden sm:inline">Find Help</span>
                         </TabsTrigger>
                     </TabsList>
 
                     <TabsContent value="call">
-                        <div className="border rounded-lg divide-y">
+                        <div className="border-2 border-teal/30 rounded-lg divide-y divide-teal/20">
                             {helplines.map((helpline, index) => (
                                 <div
                                     key={index}
-                                    className="px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                                    className="px-4 py-3 flex items-center justify-between hover:bg-teal/5 transition-colors"
                                 >
                                     <div className="min-w-0 flex-1">
-                                        <p className="font-medium text-gray-900 text-sm truncate">{helpline.name}</p>
-                                        <p className="text-xs text-gray-500">{helpline.number}</p>
+                                        <p className="font-medium text-foreground text-sm truncate">{helpline.name}</p>
+                                        <p className="text-xs text-muted-foreground">{helpline.number}</p>
                                     </div>
                                     <Button
                                         variant="ghost"
                                         size="sm"
-                                        className="ml-2 text-gray-600 hover:text-gray-900"
+                                        className="ml-2 text-teal-dark hover:text-teal hover:bg-teal/10"
                                     >
                                         <Phone className="w-4 h-4" />
                                     </Button>
@@ -91,29 +90,29 @@ function HelplinesPage() {
                     </TabsContent>
 
                     <TabsContent value="website">
-                        <div className="text-center py-12 text-gray-500">
-                            <Globe className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+                        <div className="text-center py-12 text-muted-foreground border-2 border-dashed border-teal/30 rounded-lg">
+                            <Globe className="w-12 h-12 mx-auto mb-4 text-teal/40" />
                             <p>Website resources placeholder</p>
                         </div>
                     </TabsContent>
 
                     <TabsContent value="info">
-                        <div className="text-center py-12 text-gray-500">
-                            <Info className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+                        <div className="text-center py-12 text-muted-foreground border-2 border-dashed border-teal/30 rounded-lg">
+                            <Info className="w-12 h-12 mx-auto mb-4 text-teal/40" />
                             <p>Information placeholder</p>
                         </div>
                     </TabsContent>
 
                     <TabsContent value="chat">
-                        <div className="text-center py-12 text-gray-500">
-                            <MessageSquare className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+                        <div className="text-center py-12 text-muted-foreground border-2 border-dashed border-teal/30 rounded-lg">
+                            <MessageSquare className="w-12 h-12 mx-auto mb-4 text-teal/40" />
                             <p>Chat services placeholder</p>
                         </div>
                     </TabsContent>
 
                     <TabsContent value="find">
-                        <div className="text-center py-12 text-gray-500">
-                            <MapPin className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+                        <div className="text-center py-12 text-muted-foreground border-2 border-dashed border-teal/30 rounded-lg">
+                            <MapPin className="w-12 h-12 mx-auto mb-4 text-teal/40" />
                             <p>Find local help placeholder</p>
                         </div>
                     </TabsContent>
@@ -121,10 +120,10 @@ function HelplinesPage() {
             </div>
 
             {/* Emergency notice */}
-            <div className="border-t border-gray-200 bg-gray-50">
+            <div className="border-t border-teal/30 bg-gradient-to-r from-teal/10 via-teal/5 to-teal/10">
                 <div className="mx-auto max-w-4xl px-6 py-6 text-center">
-                    <p className="text-sm text-gray-600">
-                        In an emergency, always call <span className="font-semibold">999</span> or your local emergency number.
+                    <p className="text-sm text-muted-foreground">
+                        In an emergency, always call <span className="font-semibold text-teal-dark">999</span> or your local emergency number.
                     </p>
                 </div>
             </div>

@@ -7,19 +7,19 @@ export const Route = createFileRoute("/register")({ component: RegisterPage });
 
 function RegisterPage() {
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center px-6">
-            <div className="w-full max-w-sm">
+        <div className="min-h-screen bg-gradient-to-br from-purple/10 via-background to-blue/10 flex items-center justify-center px-6">
+            <div className="w-full max-w-sm bg-white rounded-xl shadow-lg p-8 border border-purple/20">
                 {/* Logo placeholder */}
                 <div className="flex justify-center mb-8">
-                    <div className="w-16 h-16 bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center">
-                        <span className="text-gray-500 text-xs">LOGO</span>
+                    <div className="w-16 h-16 bg-purple/20 border-2 border-dashed border-purple/40 rounded-lg flex items-center justify-center">
+                        <span className="text-purple-dark text-xs font-semibold">LOGO</span>
                     </div>
                 </div>
 
-                <h1 className="text-2xl font-semibold text-gray-900 text-center">
+                <h1 className="text-2xl font-semibold text-foreground text-center">
                     Create account
                 </h1>
-                <p className="mt-2 text-gray-500 text-center text-sm">
+                <p className="mt-2 text-muted-foreground text-center text-sm">
                     Get started with your safety plan
                 </p>
 
@@ -30,6 +30,7 @@ function RegisterPage() {
                             id="username"
                             type="text"
                             placeholder="johndoe"
+                            className="focus:ring-purple focus:border-purple"
                         />
                     </div>
 
@@ -39,6 +40,7 @@ function RegisterPage() {
                             id="email"
                             type="email"
                             placeholder="you@example.com"
+                            className="focus:ring-purple focus:border-purple"
                         />
                     </div>
 
@@ -48,17 +50,18 @@ function RegisterPage() {
                             id="password"
                             type="password"
                             placeholder="••••••••"
+                            className="focus:ring-purple focus:border-purple"
                         />
                     </div>
 
-                    <Button className="w-full bg-gray-900 hover:bg-gray-800 mt-6">
+                    <Button className="w-full bg-purple-dark hover:bg-[#3d2d8a] text-white font-semibold mt-6">
                         Create account
                     </Button>
                 </form>
 
-                <p className="mt-6 text-center text-sm text-gray-500">
+                <p className="mt-6 text-center text-sm text-muted-foreground">
                     Already have an account?{" "}
-                    <Link to="/login" className="text-gray-900 font-medium hover:underline">
+                    <Link to="/login" className="text-purple-dark font-medium hover:underline">
                         Sign in
                     </Link>
                 </p>
